@@ -1,8 +1,10 @@
 ﻿@using System.Reflection;
 @typeparam TItem
-<table>
-	<GridHeader HeaderType="@typeof(TItem)"></GridHeader>
-	<tbody>
+
+<CascadingValue Value="@HeaderClass">
+	<table>
+		<GridHeader HeaderType="@typeof(TItem)"></GridHeader>
+		<tbody>
 
 		@if (Items is null)
 		{
@@ -20,8 +22,9 @@
 			}
 		}
 
-	</tbody>
-</table>
+		</tbody>
+	</table>
+</CascadingValue>
 
 @code {
 
